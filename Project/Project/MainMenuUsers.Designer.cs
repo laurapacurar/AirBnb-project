@@ -46,16 +46,21 @@ namespace Project
             this.createBookingPanel = new System.Windows.Forms.Panel();
             this.showPossibleBookings = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
-            this.dataGridView2 = new System.Windows.Forms.DataGridView();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
             this.createBooking = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
             this.locationDropDown = new System.Windows.Forms.ComboBox();
             this.startDateCalendar = new System.Windows.Forms.MonthCalendar();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
+            this.nrOfRoomsDropDown = new System.Windows.Forms.ComboBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.priceDropDown = new System.Windows.Forms.ComboBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.label10 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
@@ -63,7 +68,9 @@ namespace Project
             this.showBookingsPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.createBookingPanel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -175,9 +182,9 @@ namespace Project
             this.showBookingsPanel.BackColor = System.Drawing.Color.LavenderBlush;
             this.showBookingsPanel.Controls.Add(this.deleteBookingBtn);
             this.showBookingsPanel.Controls.Add(this.dataGridView1);
-            this.showBookingsPanel.Location = new System.Drawing.Point(257, 69);
+            this.showBookingsPanel.Location = new System.Drawing.Point(257, 62);
             this.showBookingsPanel.Name = "showBookingsPanel";
-            this.showBookingsPanel.Size = new System.Drawing.Size(863, 453);
+            this.showBookingsPanel.Size = new System.Drawing.Size(1088, 489);
             this.showBookingsPanel.TabIndex = 8;
             this.showBookingsPanel.Visible = false;
             // 
@@ -186,7 +193,7 @@ namespace Project
             this.deleteBookingBtn.FlatAppearance.BorderColor = System.Drawing.Color.Plum;
             this.deleteBookingBtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Plum;
             this.deleteBookingBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.deleteBookingBtn.Location = new System.Drawing.Point(180, 224);
+            this.deleteBookingBtn.Location = new System.Drawing.Point(310, 209);
             this.deleteBookingBtn.Name = "deleteBookingBtn";
             this.deleteBookingBtn.Size = new System.Drawing.Size(208, 44);
             this.deleteBookingBtn.TabIndex = 1;
@@ -221,7 +228,7 @@ namespace Project
             this.welcomeLabel.AutoSize = true;
             this.welcomeLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.welcomeLabel.ForeColor = System.Drawing.Color.DarkMagenta;
-            this.welcomeLabel.Location = new System.Drawing.Point(652, 152);
+            this.welcomeLabel.Location = new System.Drawing.Point(624, 125);
             this.welcomeLabel.Name = "welcomeLabel";
             this.welcomeLabel.Size = new System.Drawing.Size(86, 31);
             this.welcomeLabel.TabIndex = 10;
@@ -230,21 +237,22 @@ namespace Project
             // createBookingPanel
             // 
             this.createBookingPanel.BackColor = System.Drawing.Color.LavenderBlush;
+            this.createBookingPanel.Controls.Add(this.label9);
+            this.createBookingPanel.Controls.Add(this.label8);
+            this.createBookingPanel.Controls.Add(this.priceDropDown);
+            this.createBookingPanel.Controls.Add(this.label7);
+            this.createBookingPanel.Controls.Add(this.nrOfRoomsDropDown);
             this.createBookingPanel.Controls.Add(this.showPossibleBookings);
             this.createBookingPanel.Controls.Add(this.label6);
-            this.createBookingPanel.Controls.Add(this.dataGridView2);
-            this.createBookingPanel.Controls.Add(this.textBox3);
-            this.createBookingPanel.Controls.Add(this.textBox2);
-            this.createBookingPanel.Controls.Add(this.textBox1);
             this.createBookingPanel.Controls.Add(this.createBooking);
             this.createBookingPanel.Controls.Add(this.label5);
             this.createBookingPanel.Controls.Add(this.locationDropDown);
             this.createBookingPanel.Controls.Add(this.startDateCalendar);
             this.createBookingPanel.Controls.Add(this.label4);
             this.createBookingPanel.Controls.Add(this.label3);
-            this.createBookingPanel.Location = new System.Drawing.Point(257, 69);
+            this.createBookingPanel.Location = new System.Drawing.Point(257, 62);
             this.createBookingPanel.Name = "createBookingPanel";
-            this.createBookingPanel.Size = new System.Drawing.Size(1032, 540);
+            this.createBookingPanel.Size = new System.Drawing.Size(1085, 540);
             this.createBookingPanel.TabIndex = 2;
             this.createBookingPanel.Visible = false;
             // 
@@ -254,54 +262,23 @@ namespace Project
             this.showPossibleBookings.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Pink;
             this.showPossibleBookings.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.showPossibleBookings.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(53)))), ((int)(((byte)(71)))));
-            this.showPossibleBookings.Location = new System.Drawing.Point(582, 347);
+            this.showPossibleBookings.Location = new System.Drawing.Point(494, 297);
             this.showPossibleBookings.Name = "showPossibleBookings";
             this.showPossibleBookings.Size = new System.Drawing.Size(323, 48);
             this.showPossibleBookings.TabIndex = 13;
-            this.showPossibleBookings.Text = "Show possible bookings";
+            this.showPossibleBookings.Text = "Check availability";
             this.showPossibleBookings.UseVisualStyleBackColor = true;
             this.showPossibleBookings.Click += new System.EventHandler(this.showPossibleBookings_Click);
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(126, 347);
+            this.label6.ForeColor = System.Drawing.Color.Firebrick;
+            this.label6.Location = new System.Drawing.Point(125, 419);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(283, 17);
             this.label6.TabIndex = 12;
             this.label6.Text = "* Drag and Drop from start date to end date";
-            // 
-            // dataGridView2
-            // 
-            this.dataGridView2.BackgroundColor = System.Drawing.Color.FloralWhite;
-            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Location = new System.Drawing.Point(542, 131);
-            this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.RowHeadersWidth = 51;
-            this.dataGridView2.RowTemplate.Height = 24;
-            this.dataGridView2.Size = new System.Drawing.Size(405, 207);
-            this.dataGridView2.TabIndex = 11;
-            // 
-            // textBox3
-            // 
-            this.textBox3.Location = new System.Drawing.Point(700, 80);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(205, 22);
-            this.textBox3.TabIndex = 10;
-            // 
-            // textBox2
-            // 
-            this.textBox2.Location = new System.Drawing.Point(700, 50);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(205, 22);
-            this.textBox2.TabIndex = 9;
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(700, 22);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(205, 22);
-            this.textBox1.TabIndex = 8;
             // 
             // createBooking
             // 
@@ -309,7 +286,7 @@ namespace Project
             this.createBooking.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Pink;
             this.createBooking.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.createBooking.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(53)))), ((int)(((byte)(71)))));
-            this.createBooking.Location = new System.Drawing.Point(298, 468);
+            this.createBooking.Location = new System.Drawing.Point(494, 388);
             this.createBooking.Name = "createBooking";
             this.createBooking.Size = new System.Drawing.Size(323, 48);
             this.createBooking.TabIndex = 7;
@@ -321,7 +298,7 @@ namespace Project
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(30, 137);
+            this.label5.Location = new System.Drawing.Point(20, 209);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(114, 25);
             this.label5.TabIndex = 4;
@@ -336,7 +313,7 @@ namespace Project
             "Brasov",
             "Cluj-Napoca",
             "Timisoara"});
-            this.locationDropDown.Location = new System.Drawing.Point(339, 66);
+            this.locationDropDown.Location = new System.Drawing.Point(520, 70);
             this.locationDropDown.Name = "locationDropDown";
             this.locationDropDown.Size = new System.Drawing.Size(306, 24);
             this.locationDropDown.TabIndex = 3;
@@ -345,7 +322,9 @@ namespace Project
             // 
             // startDateCalendar
             // 
-            this.startDateCalendar.Location = new System.Drawing.Point(147, 131);
+            this.startDateCalendar.Location = new System.Drawing.Point(146, 203);
+            this.startDateCalendar.MaxDate = new System.DateTime(2022, 7, 31, 0, 0, 0, 0);
+            this.startDateCalendar.MinDate = new System.DateTime(2022, 5, 24, 0, 0, 0, 0);
             this.startDateCalendar.Name = "startDateCalendar";
             this.startDateCalendar.TabIndex = 2;
             this.startDateCalendar.DateChanged += new System.Windows.Forms.DateRangeEventHandler(this.startDateCalendar_DateChanged);
@@ -354,7 +333,7 @@ namespace Project
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(30, 66);
+            this.label4.Location = new System.Drawing.Point(211, 70);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(240, 25);
             this.label4.TabIndex = 1;
@@ -364,23 +343,129 @@ namespace Project
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(256, 0);
+            this.label3.Location = new System.Drawing.Point(343, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(348, 39);
             this.label3.TabIndex = 0;
             this.label3.Text = "Create a new booking";
             // 
+            // nrOfRoomsDropDown
+            // 
+            this.nrOfRoomsDropDown.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.nrOfRoomsDropDown.FormattingEnabled = true;
+            this.nrOfRoomsDropDown.Items.AddRange(new object[] {
+            "1",
+            "2",
+            "3"});
+            this.nrOfRoomsDropDown.Location = new System.Drawing.Point(520, 109);
+            this.nrOfRoomsDropDown.Name = "nrOfRoomsDropDown";
+            this.nrOfRoomsDropDown.Size = new System.Drawing.Size(153, 24);
+            this.nrOfRoomsDropDown.TabIndex = 14;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(276, 105);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(174, 25);
+            this.label7.TabIndex = 15;
+            this.label7.Text = "How many rooms?";
+            // 
+            // priceDropDown
+            // 
+            this.priceDropDown.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.priceDropDown.FormattingEnabled = true;
+            this.priceDropDown.Items.AddRange(new object[] {
+            "50",
+            "100",
+            "150",
+            "200",
+            "250",
+            "300",
+            "400"});
+            this.priceDropDown.Location = new System.Drawing.Point(520, 152);
+            this.priceDropDown.Name = "priceDropDown";
+            this.priceDropDown.Size = new System.Drawing.Size(153, 24);
+            this.priceDropDown.TabIndex = 16;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(332, 151);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(118, 25);
+            this.label8.TabIndex = 17;
+            this.label8.Text = "Price (RON)";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.ForeColor = System.Drawing.Color.Firebrick;
+            this.label9.Location = new System.Drawing.Point(334, 181);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(75, 17);
+            this.label9.TabIndex = 18;
+            this.label9.Text = "Price/night";
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(257, 198);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(367, 269);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 11;
+            this.pictureBox1.TabStop = false;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
+            this.pictureBox2.Location = new System.Drawing.Point(630, 198);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(364, 269);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox2.TabIndex = 12;
+            this.pictureBox2.TabStop = false;
+            // 
+            // pictureBox3
+            // 
+            this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
+            this.pictureBox3.Location = new System.Drawing.Point(1000, 198);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(364, 269);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox3.TabIndex = 13;
+            this.pictureBox3.TabStop = false;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.ForeColor = System.Drawing.Color.DarkMagenta;
+            this.label10.Location = new System.Drawing.Point(452, 157);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(556, 31);
+            this.label10.TabIndex = 14;
+            this.label10.Text = "Choose the place for your next getaway now!";
+            // 
             // MainMenuUsers
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.LavenderBlush;
             this.ClientSize = new System.Drawing.Size(1340, 614);
             this.Controls.Add(this.createBookingPanel);
             this.Controls.Add(this.showBookingsPanel);
+            this.Controls.Add(this.pictureBox3);
+            this.Controls.Add(this.pictureBox2);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.welcomeLabel);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
+            this.Controls.Add(this.label10);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "MainMenuUsers";
             this.Padding = new System.Windows.Forms.Padding(5);
@@ -394,7 +479,9 @@ namespace Project
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.createBookingPanel.ResumeLayout(false);
             this.createBookingPanel.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -422,11 +509,16 @@ namespace Project
         private System.Windows.Forms.ComboBox locationDropDown;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Button createBooking;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.Button showPossibleBookings;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.DataGridView dataGridView2;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.ComboBox priceDropDown;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.ComboBox nrOfRoomsDropDown;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.PictureBox pictureBox3;
+        private System.Windows.Forms.Label label10;
     }
 }

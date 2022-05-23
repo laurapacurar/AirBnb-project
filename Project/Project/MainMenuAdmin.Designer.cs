@@ -36,10 +36,6 @@ namespace Project
             this.panel2 = new System.Windows.Forms.Panel();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.seeAllUsersBtn = new System.Windows.Forms.Button();
-            this.pictureBox4 = new System.Windows.Forms.PictureBox();
-            this.showAllBookingsBtn = new System.Windows.Forms.Button();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.seeAllHouseBtn = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.seeAllApartmentBtn = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
@@ -68,8 +64,6 @@ namespace Project
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.userCredentialPanel.SuspendLayout();
@@ -124,10 +118,6 @@ namespace Project
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(53)))), ((int)(((byte)(71)))));
             this.panel2.Controls.Add(this.pictureBox5);
             this.panel2.Controls.Add(this.seeAllUsersBtn);
-            this.panel2.Controls.Add(this.pictureBox4);
-            this.panel2.Controls.Add(this.showAllBookingsBtn);
-            this.panel2.Controls.Add(this.pictureBox2);
-            this.panel2.Controls.Add(this.seeAllHouseBtn);
             this.panel2.Controls.Add(this.pictureBox1);
             this.panel2.Controls.Add(this.seeAllApartmentBtn);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Left;
@@ -139,7 +129,7 @@ namespace Project
             // pictureBox5
             // 
             this.pictureBox5.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox5.Image")));
-            this.pictureBox5.Location = new System.Drawing.Point(12, 33);
+            this.pictureBox5.Location = new System.Drawing.Point(12, 123);
             this.pictureBox5.Name = "pictureBox5";
             this.pictureBox5.Size = new System.Drawing.Size(61, 61);
             this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -153,7 +143,7 @@ namespace Project
             this.seeAllUsersBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.seeAllUsersBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.seeAllUsersBtn.ForeColor = System.Drawing.Color.White;
-            this.seeAllUsersBtn.Location = new System.Drawing.Point(79, 33);
+            this.seeAllUsersBtn.Location = new System.Drawing.Point(83, 123);
             this.seeAllUsersBtn.Name = "seeAllUsersBtn";
             this.seeAllUsersBtn.Size = new System.Drawing.Size(137, 61);
             this.seeAllUsersBtn.TabIndex = 16;
@@ -161,58 +151,10 @@ namespace Project
             this.seeAllUsersBtn.UseVisualStyleBackColor = true;
             this.seeAllUsersBtn.Click += new System.EventHandler(this.seeAllUsersBtn_Click);
             // 
-            // pictureBox4
-            // 
-            this.pictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox4.Image")));
-            this.pictureBox4.Location = new System.Drawing.Point(12, 427);
-            this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(61, 61);
-            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox4.TabIndex = 15;
-            this.pictureBox4.TabStop = false;
-            // 
-            // showAllBookingsBtn
-            // 
-            this.showAllBookingsBtn.FlatAppearance.BorderSize = 0;
-            this.showAllBookingsBtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Teal;
-            this.showAllBookingsBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.showAllBookingsBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.showAllBookingsBtn.ForeColor = System.Drawing.Color.White;
-            this.showAllBookingsBtn.Location = new System.Drawing.Point(79, 427);
-            this.showAllBookingsBtn.Name = "showAllBookingsBtn";
-            this.showAllBookingsBtn.Size = new System.Drawing.Size(137, 61);
-            this.showAllBookingsBtn.TabIndex = 14;
-            this.showAllBookingsBtn.Text = "Bookings";
-            this.showAllBookingsBtn.UseVisualStyleBackColor = true;
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(12, 291);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(61, 61);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox2.TabIndex = 11;
-            this.pictureBox2.TabStop = false;
-            // 
-            // seeAllHouseBtn
-            // 
-            this.seeAllHouseBtn.FlatAppearance.BorderSize = 0;
-            this.seeAllHouseBtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Teal;
-            this.seeAllHouseBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.seeAllHouseBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.seeAllHouseBtn.ForeColor = System.Drawing.Color.White;
-            this.seeAllHouseBtn.Location = new System.Drawing.Point(79, 291);
-            this.seeAllHouseBtn.Name = "seeAllHouseBtn";
-            this.seeAllHouseBtn.Size = new System.Drawing.Size(137, 61);
-            this.seeAllHouseBtn.TabIndex = 10;
-            this.seeAllHouseBtn.Text = "Houses";
-            this.seeAllHouseBtn.UseVisualStyleBackColor = true;
-            // 
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(12, 151);
+            this.pictureBox1.Location = new System.Drawing.Point(12, 293);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(61, 61);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -226,7 +168,7 @@ namespace Project
             this.seeAllApartmentBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.seeAllApartmentBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.seeAllApartmentBtn.ForeColor = System.Drawing.Color.White;
-            this.seeAllApartmentBtn.Location = new System.Drawing.Point(83, 151);
+            this.seeAllApartmentBtn.Location = new System.Drawing.Point(83, 293);
             this.seeAllApartmentBtn.Name = "seeAllApartmentBtn";
             this.seeAllApartmentBtn.Size = new System.Drawing.Size(137, 61);
             this.seeAllApartmentBtn.TabIndex = 8;
@@ -526,8 +468,6 @@ namespace Project
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.userCredentialPanel.ResumeLayout(false);
@@ -549,10 +489,6 @@ namespace Project
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.PictureBox pictureBox5;
         private System.Windows.Forms.Button seeAllUsersBtn;
-        private System.Windows.Forms.PictureBox pictureBox4;
-        private System.Windows.Forms.Button showAllBookingsBtn;
-        private System.Windows.Forms.PictureBox pictureBox2;
-        private System.Windows.Forms.Button seeAllHouseBtn;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button seeAllApartmentBtn;
         private System.Windows.Forms.DataGridView dataGridView1;

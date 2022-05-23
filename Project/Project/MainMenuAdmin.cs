@@ -207,14 +207,44 @@ namespace Project
             getAllApartments();
         }
 
-        private Boolean verifyLocation(string location)
+        private bool verifyLocation()
         {
-            if (location != "Cluj-Napoca" || location != "Baia Mare" || location != "Brasov" || location != "Timisoara")
+            string location = locationTxtBox.Text;
+            if (location == "Cluj-Napoca" || location == "Baia Mare" || location == "Brasov" || location == "Timisoara")
             {
-                MessageBox.Show("Sorry! We do not cover that area.");
+                return true;
+            }
+            else
+            {
+                MessageBox.Show("Sorry! We do not cover that area!");
                 return false;
             }
-            return true;
+        }
+
+        private bool verifyNrOfRooms(int rooms)
+        {
+            if (rooms == 1 || rooms == 2 || rooms == 3)
+            {
+                return true;
+            }
+            else
+            {
+                MessageBox.Show("Sorry! The rooms may range from 1 to 3.");
+                return false;
+            }
+        }
+
+        private bool verifyPrice(int price)
+        {
+            if (price == 50 || price == 100 || price == 150 || price == 200 || price == 250 || price == 300 || price == 350 || price == 400)
+            {
+                return true;
+            }
+            else
+            {
+                MessageBox.Show("Sorry! Price must range from 50 to 400 AND end be multiple of 50.");
+                return false;
+            }
         }
 
         private void insertApBtn_Click(object sender, EventArgs e)
@@ -223,7 +253,7 @@ namespace Project
             int rooms = Convert.ToInt32(roomsTxtBox.Text);
             int price = Convert.ToInt32(priceTxtBox.Text);
 
-            if (verifyLocation(location))
+            if (verifyLocation() && verifyNrOfRooms(rooms) && verifyPrice(price))
             {
                 command = new MySqlCommand();
                 command.CommandType = CommandType.Text;

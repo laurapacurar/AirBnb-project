@@ -16,6 +16,8 @@ namespace Project
         public MySqlConnection connection;
         public MySqlCommand command;
         String username, location;
+        int rooms, price;
+        private MySqlDataReader dr;
 
         public MainMenuUsers(String username, String password)
         {
@@ -48,17 +50,21 @@ namespace Project
         {
             foreach (DataGridViewRow row in dataGridView1.SelectedRows)
             {
-                String username, password;
+                String username, location;
+                DateTime startDate;
+                int apId, userId;
 
                 username = row.Cells[1].Value.ToString();
-                password = row.Cells[2].Value.ToString();
+                location = row.Cells[2].Value.ToString();
+
+                apId = Convert.ToInt32(row.Cells[5].Value.ToString());
+                userId = Convert.ToInt32(row.Cells[6].Value.ToString());
 
                 command = new MySqlCommand();
                 command.CommandType = CommandType.Text;
                 command.Connection = connection;
 
-                //NEED TO CHANGE QUERY
-                command.CommandText = "DELETE FROM bookings WHERE username = '" + username + "' AND  password = '" + password + "'";
+                command.CommandText = "DELETE FROM bookings WHERE username = '" + username + "' AND  location = '" + location + "' AND apartmentId = '" + apId + "' AND userId = '" + userId + "'";
 
                 connection.Open();
                 command.ExecuteReader();
@@ -96,28 +102,112 @@ namespace Project
             
         }
 
+        private int getUserId(string username)
+        {
+            int userId = 0;
+
+            if (username == "laura_user")
+            {
+                 userId = 1;
+            }
+            else if (username == "ioana_user")
+            {
+                userId = 20;
+            }
+            else if (username == "edi_user")
+            {
+                userId = 21;
+            }
+            else if (username == "test_user")
+            {
+                userId = 22;
+            }
+
+            return userId;
+        }
+
         private void createBooking_Click(object sender, EventArgs e)
         {
+            this.location = locationDropDown.SelectedItem.ToString();
+
+            DateTime startDate = new DateTime();
+            DateTime endDate = new DateTime();
+
+            startDate = startDateCalendar.SelectionStart;
+            string startDateString = startDate.ToString("u");
+            var item = startDateString.Split(' ');
+            string finalStartDate = item[0];
+
+            endDate = startDateCalendar.SelectionEnd;
+            string endDateString = endDate.ToString("u");
+            var item1 = endDateString.Split(' ');
+            string finalEndDate = item1[0];
+
+            rooms = Convert.ToInt32(nrOfRoomsDropDown.SelectedItem.ToString());
+            price = Convert.ToInt32(priceDropDown.SelectedItem.ToString());
+
+            string newusername = username;
+            int userId = getUserId(newusername);
+            int apId = 2;
+
+            connection.Open();
+            command = new MySqlCommand();
+            command.Connection = connection;
+            command.CommandText = "INSERT INTO bookings (username, location, startDate, endDate, apartmentId, userId) VALUES ('" + newusername + "' , '" + location + "' , '" + finalStartDate + "' , '" + finalEndDate + "' , '" + apId + "' , '" + userId + "')";
+
+            //dr = command.ExecuteReader();
+            int sql;
+            sql = command.ExecuteNonQuery();
+
+            if (sql > 0)
+            {
+                MessageBox.Show("Booking made successfully!");
+            }
+            else
+            {
+                MessageBox.Show("An error occured!");
+            }
+            connection.Close();
 
         }
 
         private void showPossibleBookings_Click(object sender, EventArgs e)
         {
             this.location = locationDropDown.SelectedItem.ToString();
-            textBox1.Text = location;
 
             DateTime startDate = new DateTime();
             DateTime endDate = new DateTime();
 
             startDate = startDateCalendar.SelectionStart;
-            endDate = startDateCalendar.SelectionEnd;
-            textBox2.Text = startDate.ToString();
-            textBox3.Text = endDate.ToString();
+            string startDateString = startDate.ToString("u");
+            var item = startDateString.Split(' ');
+            string finalStartDate = item[0];
 
-            dataGridView1.DataSource = null;
+            endDate = startDateCalendar.SelectionEnd;
+            string endDateString = endDate.ToString("u");
+            var item1 = endDateString.Split(' ');
+            string finalEndDate = item1[0];
+
+
+            rooms = Convert.ToInt32(nrOfRoomsDropDown.SelectedItem.ToString());
+            price = Convert.ToInt32(priceDropDown.SelectedItem.ToString());
 
             connection.Open();
-            MySqlDataAdapter mySqlDataAdapterBookings = new MySqlDataAdapter("SELECT * FROM bookings WHERE username = '" + username + "'", connection);
+            command = new MySqlCommand();
+            command.Connection = connection;
+            command.CommandText = "SELECT * FROM apartments INNER JOIN bookings ON apartments.id = bookings.apartmentId WHERE bookings.startDate <= '" + finalStartDate + "' AND bookings.endDate >=  '" + finalEndDate + "' AND apartments.nrOfRooms = '" + rooms + "' AND apartments.price = '" + price + "' AND apartments.location = '" + location + "'";
+            //command.CommandText = "SELECT * FROM apartments INNER JOIN bookings ON apartments.id = bookings.apartmentId WHERE bookings.startDate < '" + finalStartDate + "' AND bookings.startDate BETWEEN CAST('" + finalStartDate + "' AS DATE) and CAST('" + finalEndDate  + "' AS DATE) AND bookings.endDate >  '" + finalEndDate + "' AND bookings.endDate BETWEEN CAST('" + finalStartDate + "' AS DATE) and CAST('" + finalEndDate + "' AS DATE) AND apartments.nrOfRooms = '" + rooms + "' AND apartments.price = '" + price + "' AND apartments.location = '" + location + "'";
+            dr = command.ExecuteReader();
+
+            if (dr.Read())
+            {
+                MessageBox.Show("Looks like a reservation is alrdeady made!");
+            }
+            else
+            {
+                MessageBox.Show("You can make you reservation now by clicking on the 'Create booking' button!");
+            }
+            connection.Close();
         }
 
         private void startDateCalendar_DateChanged(object sender, DateRangeEventArgs e)
